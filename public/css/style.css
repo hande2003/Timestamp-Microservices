@@ -1,0 +1,35 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    margin: 1rem;
+}
+
+h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: darkslategray;
+    height: 120px;
+}
+
+form{
+    width: 20rem ;
+    justify-self: center;
+}
+.row{
+    text-align: center;
+}
+
+.col{
+    margin: 1rem;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    right: 45%;
+    text-align: center;
+    /* background-color: aqua; */
+}
