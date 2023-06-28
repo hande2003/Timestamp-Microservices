@@ -4,6 +4,8 @@ const app = express();
 const bodyParser = require("body-parser");
 let date = require("./routes/date");
 
+app.set("views", process.cwd() + "/views");
+
 app.set("view engine", "ejs");
 
 app.use(
@@ -21,6 +23,7 @@ app.get("/", (req, res) => {
     data: {
       unix: new Date().valueOf(),
       UTC: new Date().toUTCString(),
+      input: new Date(),
     },
   });
 });
