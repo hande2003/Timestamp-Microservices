@@ -14,15 +14,6 @@ app.use(
 
 app.use(bodyParser.json());
 
-app.post("/api", (req, res) => {
-  res.render("index", {
-    data: {
-      unix: new Date().valueOf(),
-      UTC: new Date().toUTCString(),
-    },
-  });
-});
-
 app.use("/", date);
 
 app.get("/", (req, res) => {
