@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-let date = require("./router/date");
+let date = require("./routes/date");
 
 app.set("view engine", "ejs");
 
@@ -27,6 +27,10 @@ app.get("/", (req, res) => {
 app.use("/public", express.static(process.cwd() + "/public"));
 
 let PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Node is listening on port ${PORT}...`));
+app.listen(PORT, () =>
+  console.log(
+    `Node is listening on port ${PORT}. Go to http://localhost:${PORT}`
+  )
+);
 
 module.exports = app;
