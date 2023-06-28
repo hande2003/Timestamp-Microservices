@@ -4,7 +4,6 @@
   "description": "TimeStamp API project as part of freeCodeCamp certification using express",
   "main": "./src/index.js",
   "scripts": {
-    "vercel-build": "NODE_ENV=production node ./src/index.js",
     "start": "nodemon ./src/index.js"
   },
   "keywords": [
