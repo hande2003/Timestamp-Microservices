@@ -20,17 +20,15 @@ app.post("/api", (req, res) => {
 
 app.use("/api", date);
 
-app.get("/", (req, res) => {
-  res.sendFile(process.cwd() + "/views/index.html");
+app.get("*", (req, res) => {
+  res.sendFile(process.cwd() + "/views/index.ejs");
 });
 
 app.use("/public", express.static(process.cwd() + "/public"));
 
 let PORT = process.env.PORT || 3000;
 app.listen(PORT, () =>
-  console.log(
-    `Node is listening on port ${PORT}. Go to http://localhost:${PORT}`
-  )
+  console.log(`Node is running on port ${PORT}. Go to http://localhost:${PORT}`)
 );
 
 module.exports = app;
