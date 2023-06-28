@@ -15,7 +15,7 @@
                 <header><h1>Timestamp Microservices</h1></header>
             </div>
         </div>
-        <form class="row g-3 mx-auto" id="form-body" method="post" action="">
+        <form class="row g-3 mx-auto" id="form-body" method="get" action="">
             <div class="col mx-auto">
                 <div class="mb-2">
                     <label for="unix" class="form-label">Timestamp</label>
@@ -27,21 +27,29 @@
                     <button type="submit" class="btn btn-white" onclick=api()>Submit</button>
                 </div>
         </form>
-        </div>
-        <div class="row mx-auto" id="footer">
+        <div class="row mx-auto">
             <div class="col">
-                <footer>By Shambo</footer>           
+                <%if(!data.hasOwnProperty("error")){ %>
+                    <p>Given Input: <%= data.input %></p>
+                    <h1>Unix date is <span style="color:brown;"><%= data.unix %></span></h1>
+                <h1>UTC date is <span style="color:brown"><%= data.UTC %></span></h1>
+ <% } else{ %>  
+    <p>Given Input: <%= data.input %></p>
+   <h1>Error</h1>
+<% } %>
+                
             </div>
+        </div>
         </div>    
     </div>
     <script> 
         function api(){
             let value = document.getElementById("date").value;
             if(value!=null){
-                document.getElementById("form-body").action = "/api/"+value;
+                document.getElementById("form-body").action = "/"+value;
               }else{
                 let param = new Date().getTime();
-                document.getElementById("form-body").action = "/api/"+ param;
+                document.getElementById("form-body").action = "/";
             }
 
         }

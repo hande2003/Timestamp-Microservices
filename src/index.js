@@ -15,13 +15,23 @@ app.use(
 app.use(bodyParser.json());
 
 app.post("/api", (req, res) => {
-  res.json({ unix: new Date().valueOf(), utc: new Date().toUTCString() });
+  res.render("index", {
+    data: {
+      unix: new Date().valueOf(),
+      UTC: new Date().toUTCString(),
+    },
+  });
 });
 
-app.use("/api", date);
+app.use("/", date);
 
-app.get("*", (req, res) => {
-  res.sendFile(process.cwd() + "/views/index.ejs");
+app.get("/", (req, res) => {
+  res.render("index", {
+    data: {
+      unix: new Date().valueOf(),
+      UTC: new Date().toUTCString(),
+    },
+  });
 });
 
 app.use("/public", express.static(process.cwd() + "/public"));
