@@ -5,7 +5,7 @@ const app = express();
 const bodyParser = require("body-parser");
 let date = require("./routes/date");
 
-app.set("views", __dirname + "/views");
+app.set("views", process.cwd() + "/public/views");
 
 app.set("view engine", "ejs");
 
