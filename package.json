@@ -4,7 +4,8 @@
   "description": "TimeStamp API project as part of freeCodeCamp certification using express",
   "main": "./src/index.js",
   "scripts": {
-    "start": "nodemon ./src/index.js"
+    "start": "nodemon ./src/index.js",
+    "build": "echo Hello"
   },
   "keywords": [
     "API Developement",
