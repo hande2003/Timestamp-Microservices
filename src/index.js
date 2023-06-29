@@ -5,7 +5,7 @@ const app = express();
 const bodyParser = require("body-parser");
 let date = require("./routes/date");
 
-app.set("views", process.cwd() + "/public/views");
+app.set("views", process.cwd() + "/views");
 
 app.set("view engine", "ejs");
 
@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
     data: {
       unix: new Date().valueOf(),
       UTC: new Date().toUTCString(),
-      input: new Date(),
+      input: new Date().toLocaleString("fr"),
     },
   });
 });
@@ -35,5 +35,3 @@ let PORT = process.env.PORT || 3000;
 app.listen(PORT, () =>
   console.log(`Node is running on port ${PORT}. Go to http://localhost:${PORT}`)
 );
-
-module.exports = app;
